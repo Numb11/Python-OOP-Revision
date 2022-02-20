@@ -1,0 +1,36 @@
+class Newuser:
+  def __init__(self,name,email,password):
+    self.name = name
+    self.password = password
+    self.email = email
+    self.auth = False
+  def fname(self):
+    return ((self.name.split())[0])
+  
+  def lname(self):
+    return ((self.name.split())[1])
+  
+  def cemail(self):
+    return self.email
+  
+  def checkpass(self):
+    for i in self.password: 
+      if i.isupper() and len(self.password)>=8:
+        self.auth = True
+    if self.auth == True:
+     return self.auth
+    else:
+      return ("Check password length and please make sure capitals are used.")
+  
+  def changepass(self,password):
+    self.password = password
+
+name = input("Please enter your surname and forename:")
+password = input("Enter password(Min ch 8):")
+email = input("Enter email:")
+user = Newuser(name,email,password)
+while not(user.checkpass() == True):
+ print(user.checkpass())
+ password = input("Enter password(Min ch 8):")
+ user.changepass(password)
+print(f"Welcome you have now created an account {user.fname()} please log at the log in page.")
