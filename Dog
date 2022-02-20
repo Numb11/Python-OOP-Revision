@@ -1,0 +1,15 @@
+class Dog:
+ def __init__(self,breed,colour,name):
+     self.breed = breed
+     self.colour = colour
+     self.name = name
+
+ def bark(self):
+     print("bark")
+ 
+ def describe(self):
+     print(f"{self.name} is a {self.colour} {self.breed}")
+
+mac = Dog("westie","white","Mac")
+mac.bark()
+mac.describe()
